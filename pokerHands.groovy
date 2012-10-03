@@ -36,7 +36,7 @@ if(str == "hearts"||str == "Hearts"){
 
 
 println "Please enter a card number or letter: "
-String str = System.console().readLine()
+str = System.console().readLine()
 if(str == "J"){
   b = 11
 } else if(str == "Q"){
@@ -61,7 +61,7 @@ if(str == "hearts"||str == "Hearts"){
 
 
 println "Please enter a card number or letter: "
-String str = System.console().readLine()
+str = System.console().readLine()
 if(str == "J"){
   c = 11
 } else if(str == "Q"){
@@ -86,7 +86,7 @@ if(str == "hearts"||str == "Hearts"){
 
 
 println "Please enter a card number or letter: "
-String str = System.console().readLine()
+str = System.console().readLine()
 if(str == "J"){
   d = 11
 } else if(str == "Q"){
@@ -111,7 +111,7 @@ if(str == "hearts"||str == "Hearts"){
 
 
 println "Please enter a card number or letter: "
-String str = System.console().readLine()
+str = System.console().readLine()
 if(str == "J"){
   e = 11
 } else if(str == "Q"){
@@ -134,6 +134,6 @@ if(str == "hearts"||str == "Hearts"){
  card5 = 4
 }
 
-if(card1 == card2 == card3 == card4 == card5){
+if(card1 == card2 && card3 == card4 && card1 == card5 ){
 println "You have a flush!"
 }
