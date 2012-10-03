@@ -8,7 +8,8 @@ int card2
 int card3
 int card4
 int card5
-
+int pairs = 0
+int consecutive = 0
 
 println "Please enter a card number or letter: "
 String str = System.console().readLine()
@@ -35,6 +36,7 @@ if(str == "hearts"||str == "Hearts"){
 }
 
 
+
 println "Please enter a card number or letter: "
 str = System.console().readLine()
 if(str == "J"){
@@ -46,6 +48,13 @@ if(str == "J"){
 } else {
   b = Integer.parseInt(str)
 }
+
+if(a == b){
+ pairs + 1
+} else if(a == b+1 || a == b-1){
+ consecutive + 1
+}
+   
 
 println "and now please enter a suit: "
 str = System.console().readLine()
@@ -72,6 +81,12 @@ if(str == "J"){
   c = Integer.parseInt(str)
 }
 
+if(a == c || b == c){
+ pairs + 1
+} else if(a == c+1 || a == c-1 || b == c+1 || b == c-1){
+ consecutive + 1
+}
+
 println "and now please enter a suit: "
 str = System.console().readLine()
 if(str == "hearts"||str == "Hearts"){
@@ -84,7 +99,6 @@ if(str == "hearts"||str == "Hearts"){
  card3 = 4
 }
 
-
 println "Please enter a card number or letter: "
 str = System.console().readLine()
 if(str == "J"){
@@ -95,6 +109,12 @@ if(str == "J"){
   d = 13
 } else {
   d = Integer.parseInt(str)
+}
+
+if(a == d || b == d || c == d){
+ pairs + 1
+} else if(a == d+1 || a == d-1 || b == d+1 || b == d-1 || c == d+1 || a == d-1){
+ consecutive + 1
 }
 
 println "and now please enter a suit: "
@@ -121,6 +141,13 @@ if(str == "J"){
 } else {
   e = Integer.parseInt(str)
 }
+
+if(a == e || b == e || c == e || d == e){
+ pairs + 1
+} else if(a == e+1 || a == e-1 || b == e+1 || b == e-1 || c == e+1 || a == e-1 || d == e+1 || d == e-1){
+ consecutive + 1
+}
+
 
 println "and now please enter a suit: "
 str = System.console().readLine()
