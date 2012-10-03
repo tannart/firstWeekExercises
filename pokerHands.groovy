@@ -148,7 +148,6 @@ if(a == e || b == e || c == e || d == e){
  consecutive + 1
 }
 
-
 println "and now please enter a suit: "
 str = System.console().readLine()
 if(str == "hearts"||str == "Hearts"){
@@ -161,6 +160,22 @@ if(str == "hearts"||str == "Hearts"){
  card5 = 4
 }
 
+print "consecutive" + consecutive
+
 if(card1 == card2 && card3 == card4 && card1 == card5 ){
 println "You have a flush!"
+}
+
+if(pairs == 2){
+ print "congrats, you got a pair"
+} else if(pairs == 3){
+ print "well done, you got three of a kind"
+} else if(pairs == 4){
+ print "Unbelievable, You got a four of a kind!"
+} else if(pairs == 5){
+ print "Nice try, you are clearly cheating, you will now be ejected from the hotel"
+}
+
+if(consecutive ==5){
+ println "Way to go man! You totally got a Straight!"
 }
