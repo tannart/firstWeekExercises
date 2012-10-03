@@ -8,8 +8,8 @@ int card2
 int card3
 int card4
 int card5
-int pairs = 0
-int consecutive = 0
+int pairs
+int consecutive
 
 println "Please enter a card number or letter: "
 String str = System.console().readLine()
@@ -35,8 +35,6 @@ if(str == "hearts"||str == "Hearts"){
  card1 = 4
 }
 
-
-
 println "Please enter a card number or letter: "
 str = System.console().readLine()
 if(str == "J"){
@@ -54,8 +52,11 @@ if(a == b){
 } else if(a == b+1 || a == b-1){
  consecutive + 1
 }
-   
 
+println " a was " + a
+println " b was " + b
+   
+/*
 println "and now please enter a suit: "
 str = System.console().readLine()
 if(str == "hearts"||str == "Hearts"){
@@ -160,6 +161,7 @@ if(str == "hearts"||str == "Hearts"){
  card5 = 4
 }
 
+*/
 println "consecutive " + consecutive
 println "pairs " + pairs
 
