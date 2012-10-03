@@ -160,7 +160,8 @@ if(str == "hearts"||str == "Hearts"){
  card5 = 4
 }
 
-print "consecutive" + consecutive
+println "consecutive " + consecutive
+println "pairs " + pairs
 
 if(card1 == card2 && card3 == card4 && card1 == card5 ){
 println "You have a flush!"
@@ -176,6 +177,6 @@ if(pairs == 2){
  print "Nice try, you are clearly cheating, you will now be ejected from the hotel"
 }
 
-if(consecutive ==5){
+if(consecutive == 4){
  println "Way to go man! You totally got a Straight!"
 }
