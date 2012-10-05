@@ -157,12 +157,13 @@ if(str == "hearts"||str == "Hearts"){
  card5 = 4
 }
 
-
-if(card1 == card2 && card3 == card4 && card1 == card5 ){
+if(consecutive == 4 && card1 == card2 && card3 == card4 && card1 == card5){
+ println "Way to go man! You totally got a Straight Flush! THATS THE BEST HAND IN THE GAME!!!!"
+} else if(card1 == card2 && card3 == card4 && card1 == card5 ){
 println "You have a flush!"
-}
-
-if(pairs == 1){
+} else if(consecutive == 4){
+ println "Way to go man! You totally got a Straight!"
+} else if(pairs == 1){
  print "congrats, you got a pair"
 } else if(pairs == 2){
  print "well done, you got three of a kind"
@@ -172,6 +173,3 @@ if(pairs == 1){
  print "Nice try, you are clearly cheating, you will now be ejected from the hotel"
 }
 
-if(consecutive == 4){
- println "Way to go man! You totally got a Straight!"
-}
