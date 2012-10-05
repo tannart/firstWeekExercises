@@ -9,8 +9,11 @@ int card3
 int card4
 int card5
 int pairs
-int house
+int pairsCounter
 int twoPair
+int twoPairsCounter
+int threePair
+int threePairsCounter
 int consecutive
 
 println "Please enter a card number or letter: "
@@ -36,6 +39,8 @@ if(str == "hearts"||str == "Hearts"){
 } else if(str == "clubs" || str == "Clubs"){
  card1 = 4
 }
+ 
+pair = a
 
 println "Please enter a card number or letter: "
 str = System.console().readLine()
@@ -50,9 +55,12 @@ if(str == "J"){
 }
 
 if(a == b){
- pairs = pairs + 1
-} else if(a == b+1 || a == b-1){
- consecutive = consecutive + 1
+ pairsCounter = pairsCounter + 1
+} else { 
+ b = twoPair
+  if(a == b+1 || a == b-1){
+  consecutive = consecutive + 1
+ }
 }
    
 println "and now please enter a suit: "
@@ -80,10 +88,12 @@ if(str == "J"){
   c = Integer.parseInt(str)
 }
 
-if(a == c || b == c){
- pairs = pairs + 1
- if(c!=a && c!=b){
-  twoPair = c
+if(a == c){
+ pairsCounter = pairs + 1
+} else if(b == c){
+ twopairsCounter = +1
+} else{
+ threePairsCounter = c
 } else if(a == c+1 || a == c-1 || b == c+1 || b == c-1){
  consecutive = consecutive + 1 
 }
@@ -112,16 +122,17 @@ if(str == "J"){
   d = Integer.parseInt(str)
 }
 
-if(a == d || b == d || c == d){
- pairs = pairs + 1
-  if(d!=a && d!=b && d!=c){
-   if(d == twoPair){
-    house = house + 1
-    }
-   }
-} else if(a == d+1 || a == d-1 || b == d+1 || b == d-1 || c == d+1 || c == d-1){
- consecutive = consecutive + 1
-} 
+if(a == d){
+ pairsCounter = pairsCounter + 1
+} else if(b == d){
+ twoPairsCounter = twoPairsCounter + 1
+} else if(c == d){
+ threePairsCounter = threePairsCounter +1
+ }
+   if(a == d+1 || a == d-1 || b == d+1 || b == d-1 || c == d+1 || c == d-1){
+  consecutive = consecutive + 1
+ }
+}
 
 println "and now please enter a suit: "
 str = System.console().readLine()
@@ -148,15 +159,16 @@ if(str == "J"){
   e = Integer.parseInt(str)
 }
 
-if(a == e || b == e || c == e || d == e){
- pairs = pairs + 1
- if(a!=d && a!=b && a!=c){
-   if(d == twoPair){
-    house = house + 1
-    }
-   }
-} else if(a == e+1 || a == e-1 || b == e+1 || b == e-1 || c == e+1 || a == e-1 || d == e+1 || d == e-1){
+if(a == d){
+ pairsCounter = pairsCounter + 1
+} else if(b == d){
+ twoPairsCounter = twoPairsCounter + 1
+} else if(c == d){
+ threePairsCounter = threePairsCounter +1
+}
+    if(a == e+1 || a == e-1 || b == e+1 || b == e-1 || c == e+1 || a == e-1 || d == e+1 || d == e-1){
  consecutive = consecutive + 1
+ }
 }
 
 println "and now please enter a suit: "
@@ -170,13 +182,18 @@ if(str == "hearts"||str == "Hearts"){
 } else if(str == "clubs" || str == "Clubs"){
  card5 = 4
 }
-
+print house
+print pairs
 if(consecutive == 4 && card1 == card2 && card3 == card4 && card1 == card5){
  println "Way to go man! You totally got a Straight Flush! THATS THE BEST HAND IN THE GAME!!!!"
+} else if((house == 2 && pairs == 1) || (house == 1 && pairs == 2)){
+ print "Full House"
 } else if(card1 == card2 && card3 == card4 && card1 == card5 ){
 println "You have a flush!"
 } else if(consecutive == 4){
  println "Way to go man! You totally got a Straight!"
+} else if(house == 1 && pairse == 1){
+  print "you have a two pair"
 } else if(pairs == 1){
  print "congrats, you got a pair"
 } else if(pairs == 2){
