@@ -9,6 +9,8 @@ int card3
 int card4
 int card5
 int pairs
+int house
+int twoPair
 int consecutive
 
 println "Please enter a card number or letter: "
@@ -80,8 +82,10 @@ if(str == "J"){
 
 if(a == c || b == c){
  pairs = pairs + 1
+ if(c!=a && c!=b){
+  twoPair = c
 } else if(a == c+1 || a == c-1 || b == c+1 || b == c-1){
- consecutive = consecutive + 1
+ consecutive = consecutive + 1 
 }
 
 println "and now please enter a suit: "
@@ -110,9 +114,14 @@ if(str == "J"){
 
 if(a == d || b == d || c == d){
  pairs = pairs + 1
+  if(d!=a && d!=b && d!=c){
+   if(d == twoPair){
+    house = house + 1
+    }
+   }
 } else if(a == d+1 || a == d-1 || b == d+1 || b == d-1 || c == d+1 || c == d-1){
  consecutive = consecutive + 1
-}
+} 
 
 println "and now please enter a suit: "
 str = System.console().readLine()
@@ -141,6 +150,11 @@ if(str == "J"){
 
 if(a == e || b == e || c == e || d == e){
  pairs = pairs + 1
+ if(a!=d && a!=b && a!=c){
+   if(d == twoPair){
+    house = house + 1
+    }
+   }
 } else if(a == e+1 || a == e-1 || b == e+1 || b == e-1 || c == e+1 || a == e-1 || d == e+1 || d == e-1){
  consecutive = consecutive + 1
 }
@@ -171,5 +185,7 @@ println "You have a flush!"
  print "Unbelievable, You got a four of a kind!"
 } else if(pairs == 4){
  print "Nice try, you are clearly cheating, you will now be ejected from the hotel"
+} else {
+ print "Sorry chachi, no dice."
 }
 
