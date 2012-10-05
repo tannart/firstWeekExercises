@@ -48,15 +48,11 @@ if(str == "J"){
 }
 
 if(a == b){
- pairs + 1
+ pairs = pairs + 1
 } else if(a == b+1 || a == b-1){
- consecutive + 1
+ consecutive = consecutive + 1
 }
-
-println " a was " + a
-println " b was " + b
    
-/*
 println "and now please enter a suit: "
 str = System.console().readLine()
 if(str == "hearts"||str == "Hearts"){
@@ -83,9 +79,9 @@ if(str == "J"){
 }
 
 if(a == c || b == c){
- pairs + 1
+ pairs = pairs + 1
 } else if(a == c+1 || a == c-1 || b == c+1 || b == c-1){
- consecutive + 1
+ consecutive = consecutive + 1
 }
 
 println "and now please enter a suit: "
@@ -113,9 +109,9 @@ if(str == "J"){
 }
 
 if(a == d || b == d || c == d){
- pairs + 1
-} else if(a == d+1 || a == d-1 || b == d+1 || b == d-1 || c == d+1 || a == d-1){
- consecutive + 1
+ pairs = pairs + 1
+} else if(a == d+1 || a == d-1 || b == d+1 || b == d-1 || c == d+1 || c == d-1){
+ consecutive = consecutive + 1
 }
 
 println "and now please enter a suit: "
@@ -144,9 +140,9 @@ if(str == "J"){
 }
 
 if(a == e || b == e || c == e || d == e){
- pairs + 1
+ pairs = pairs + 1
 } else if(a == e+1 || a == e-1 || b == e+1 || b == e-1 || c == e+1 || a == e-1 || d == e+1 || d == e-1){
- consecutive + 1
+ consecutive = consecutive + 1
 }
 
 println "and now please enter a suit: "
@@ -161,21 +157,18 @@ if(str == "hearts"||str == "Hearts"){
  card5 = 4
 }
 
-*/
-println "consecutive " + consecutive
-println "pairs " + pairs
 
 if(card1 == card2 && card3 == card4 && card1 == card5 ){
 println "You have a flush!"
 }
 
-if(pairs == 2){
+if(pairs == 1){
  print "congrats, you got a pair"
-} else if(pairs == 3){
+} else if(pairs == 2){
  print "well done, you got three of a kind"
-} else if(pairs == 4){
+} else if(pairs == 3){
  print "Unbelievable, You got a four of a kind!"
-} else if(pairs == 5){
+} else if(pairs == 4){
  print "Nice try, you are clearly cheating, you will now be ejected from the hotel"
 }
 
