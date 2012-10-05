@@ -37,8 +37,6 @@ if(str == "hearts"||str == "Hearts"){
 } else if(str == "clubs" || str == "Clubs"){
  card1 = 4
 }
- 
-pairsCounter = 1
 
 println "Please enter a card number or letter: "
 str = System.console().readLine()
@@ -54,8 +52,6 @@ if(str == "J"){
 
 if(a == b){
  pairsCounter += 1
-} else { 
- twoPairsCounter +=1
 }
 
 if(a == b+1 || a == b-1){
@@ -90,9 +86,7 @@ if(str == "J"){
 if(a == c){
  pairsCounter += 1
 } else if(b == c){
- twopairsCounter +=1
-} else{
- threePairsCounter +=1
+ twoPairsCounter +=1
 }
 
 if(a == c+1 || a == c-1 || b == c+1 || b == c-1){
@@ -129,8 +123,6 @@ if(a == d){
  twoPairsCounter += 1
 } else if(c == d){
  threePairsCounter += 1
-} else{
- fourPairsCounter +=1
 }
 
 if(a == d+1 || a == d-1 || b == d+1 || b == d-1 || c == d+1 || c == d-1){
@@ -198,18 +190,18 @@ if(consecutive == 4 && card1 == card2 && card3 == card4 && card1 == card5){
  println "Full House"
 } else if(card1 == card2 && card3 == card4 && card1 == card5 && card1 == card3){
  println "You have a flush!"
-} else if(consecutive == 4){
- println "Way to go man! You totally got a Straight!"
-} else if(pairsCounter == 4 || twoPairsCounter == 4){
+} else if(pairsCounter == 3 || twoPairsCounter == 3){
  println "Four of a Kind"
-} else if(pairsCounter == 3 || twoPairsCounter == 3 || threePairsCounter == 3 || fourPairsCounter == 3){
+} else if(pairsCounter == 2 || twoPairsCounter == 2 || threePairsCounter == 2){
  println "Three of a Kind"
-} else if((pairsCounter + twoPairsCounter == 2) || (pairsCounter + threePairsCounter == 2) || (pairsCounter + fourPairsCounter == 2) || (twoPairsCounter + threePairsCounter == 2) || (twoPairsCounter + fourPairsCounter == 2) || (threePairsCounter + fourPairsCounter ==2)){
+} else if((pairsCounter == 1 && twoPairsCounter == 1) || (pairsCounter == 1 && threePairsCounter == 1) || (pairsCounter == 1 && fourPairsCounter == 1) || (twoPairsCounter == 1 && threePairsCounter == 1) || (twoPairsCounter ==1 && fourPairsCounter == 1) || (threePairsCounter ==1 & fourPairsCounter ==1)){
  println "you have a two pair"
-} else if(pairsCounter == 2 || twoPairsCounter == 2 || threePairsCounter == 2 || fourPairsCounter == 2){
+} else if(pairsCounter == 1 || twoPairsCounter == 1 || threePairsCounter == 1 || fourPairsCounter == 1){
  println "Pair"
 } else if(pairsCounter == 5 || twoPairsCounter == 5 || threePairsCounter == 5 || fourPairsCounter == 5){
  println "Nice try, you are clearly cheating, you will now be ejected from the hotel"
+} else if(consecutive == 4){
+ println "Way to go man! You totally got a Straight!"
 } else {
  println "Sorry chachi, no dice."
 }
